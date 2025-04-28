@@ -4,46 +4,41 @@
     import { Id, Tab, Tabs } from '$lib/components';
     import { isTabSelected } from '$lib/helpers/load';
     import { Cover, CoverTitle } from '$lib/layout';
-    import { canWriteDatabases } from '$lib/stores/roles';
-    import { database } from './store';
+    import { doc } from './store';
 
     const projectId = page.params.project;
     const databaseId = page.params.database;
-    const path = `${base}/project-${projectId}/databases/database-${databaseId}`;
+    const collectionId = page.params.table;
+    const documentId = page.params.row;
+    const path = `${base}/project-${projectId}/databases/database-${databaseId}/table-${collectionId}/row-${documentId}`;
     const tabs = [
         {
             href: path,
-            title: 'Tables',
-            event: 'tables',
+            title: 'Overview',
+            event: 'overview'
+        },
+        {
+            href: `${path}/data`,
+            title: 'Data',
+            event: 'data',
             hasChildren: true
         },
         {
-            href: `${path}/backups`,
-            title: 'Backups',
-            event: 'backups',
+            href: `${path}/activity`,
+            title: 'Activity',
+            event: 'activity',
             hasChildren: true
-        },
-        {
-            href: `${path}/usage`,
-            title: 'Usage',
-            event: 'usage',
-            hasChildren: true
-        },
-        {
-            href: `${path}/settings`,
-            event: 'settings',
-            title: 'Settings',
-            disabled: !$canWriteDatabases
         }
-    ].filter((tab) => !tab.disabled);
+    ];
 </script>
 
 <Cover>
     <svelte:fragment slot="header">
-        <CoverTitle href={`${base}/project-${projectId}/databases`}>
-            {$database.name}
+        <CoverTitle
+            href={`${base}/project-${projectId}/databases/database-${databaseId}/table-${collectionId}`}>
+            {$doc?.$id}
         </CoverTitle>
-        <Id value={$database.$id}>{$database.$id}</Id>
+        <Id value={$doc?.$id} event="row">Row ID</Id>
     </svelte:fragment>
 
     <Tabs>
