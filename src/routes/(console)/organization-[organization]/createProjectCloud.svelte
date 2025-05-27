@@ -16,6 +16,7 @@
     const teamId = page.params.organization;
     export let regions: Array<Models.ConsoleRegion> = [];
     export let showCreateProjectCloud: boolean;
+    export let projects: number;
 
     async function onFinish() {
         await invalidate(Dependencies.FUNCTIONS);
@@ -61,6 +62,7 @@
 
 <Modal bind:show={showCreateProjectCloud} title={'Create project'} onSubmit={create}>
     <CreateProject
+        projects={projects}
         showTitle={false}
         bind:id={$createProject.id}
         bind:projectName={$createProject.name}

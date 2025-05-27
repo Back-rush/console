@@ -17,6 +17,7 @@
         checkForMarkedForDeletion,
         checkForMissingPaymentMethod,
         checkForNewDevUpgradePro,
+        checkForProjectsLimit,
         checkForUsageLimit,
         checkPaymentAuthorizationRequired,
         paymentExpired,
@@ -301,6 +302,7 @@
         if (currentOrganizationId === org.$id) return;
         if (isCloud) {
             currentOrganizationId = org.$id;
+            await checkForProjectsLimit(org, data.projects?.length || 0);
             await checkForUsageLimit(org);
             checkForMarkedForDeletion(org);
             await checkForNewDevUpgradePro(org);

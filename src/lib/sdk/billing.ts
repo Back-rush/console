@@ -308,6 +308,7 @@ export type Plan = {
     webhooks: number;
     users: number;
     teams: number;
+    projects: number;
     databases: number;
     buckets: number;
     fileSize: number;
@@ -573,6 +574,22 @@ export class Billing {
             organizationId,
             budget,
             alerts
+        };
+        const uri = new URL(this.client.config.endpoint + path);
+        return await this.client.call(
+            'patch',
+            uri,
+            {
+                'content-type': 'application/json'
+            },
+            params
+        );
+    }
+
+    async updateSelectedProjects(organizationId: string, projects: string[]): Promise<Organization> {
+        const path = `/organizations/${organizationId}/projects`;
+        const params = {
+            projects
         };
         const uri = new URL(this.client.config.endpoint + path);
         return await this.client.call(
