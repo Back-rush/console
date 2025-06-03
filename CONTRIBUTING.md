@@ -1,10 +1,10 @@
 # Contributing
 
-We would ❤️ for you to contribute to Appwrite and help make it better! We want your experience while contributing to Appwrite to be fun, enjoyable, and educational for anyone and everyone. All contributions are welcome, including issues, and new docs, as well as updates and tweaks, blog posts, workshops, and more.
+We would ❤️ for you to contribute to Backrush and help make it better! We want your experience while contributing to Backrush to be fun, enjoyable, and educational for anyone and everyone. All contributions are welcome, including issues, and new docs, as well as updates and tweaks, blog posts, workshops, and more.
 
 ## How to Start?
 
-If you are worried about or don't know where to start, check out the next section that explains what kind of help is needed and how you can get involved. You can reach out with any questions on our [Discord](https://appwrite.io/discord) server. You can also submit an issue and a maintainer can guide you!
+If you are worried about or don't know where to start, check out the next section that explains what kind of help is needed and how you can get involved. 
 
 ## Repo Structure
 
@@ -41,29 +41,29 @@ If you are worried about or don't know where to start, check out the next sectio
 ### 1. Clone the repository with git
 
 ```bash
-git clone https://github.com/appwrite/console.git appwrite-console
+git clone https://github.com/Back-rush/console.git backrush-console
 ```
 
 ### 2. Install dependencies with npm
 
-Navigate to the Appwrite Console repository and install dependencies.
+Navigate to the Backrush Console repository and install dependencies.
 
 ```bash
-cd appwrite-console && pnpm install
+cd backrush-console && pnpm install
 ```
 
-### 3. Install and run Appwrite locally
+### 3. Install and run Backrush locally
 
-When you run the Appwrite Console locally, it needs to point to a backend as well. The easiest way to do this is to run an Appwrite instance locally.
+When you run the Backrush Console locally, it needs to point to a backend as well. The easiest way to do this is to run an Backrush instance locally.
 
-Follow the [install instructions](https://appwrite.io/docs/advanced/self-hosting) in the Appwrite docs.
+Follow the [install instructions](https://backrush.io/docs/advanced/self-hosting) in the Backrush docs.
 
 ### 4. Setup environment variables
 
 Add a `.env` file by copying the `.env.example` file as a template in the project's root directory.
 
 > **Note**
-> If you are updating from Appwrite `1.5.x`, be aware that the variables for the console in the `.env` / `.env.example` file have changed in `1.6.x`.
+> If you are updating from Backrush `1.5.x`, be aware that the variables for the console in the `.env` / `.env.example` file have changed in `1.6.x`.
 
 Finally, start a development server:
 
@@ -221,39 +221,33 @@ Don't use `@fixme`, which defines things that are broken. Don't commit broken co
 
 ### Dependencies
 
-Please avoid introducing new dependencies to Appwrite without consulting the team. New dependencies can be very helpful, but they also introduce new security and privacy issues, complexity, and impact total docker image size.
+Please avoid introducing new dependencies to Backrush without consulting the team. New dependencies can be very helpful, but they also introduce new security and privacy issues, complexity, and impact total docker image size.
 
 Adding a new dependency should contribute vital value to the product with minimum possible risk.
 
 ## Introducing New Features
 
-We would 💖 you to contribute to Appwrite, but we also want to ensure Appwrite is loyal to its vision and mission statement 🙏.
+We would 💖 you to contribute to Backrush, but we also want to ensure Backrush is loyal to its vision and mission statement 🙏.
 
 For us to find the right balance, please open an issue explaining your ideas before introducing a new pull request.
 
-This will allow the Appwrite community to sufficiently discuss the new feature value and how it fits within the product roadmap and vision.
-
-This is also important for the Appwrite lead developers to be able to provide technical input and potentially a different emphasis regarding the feature design and architecture. Some bigger features might need to go through our [RFC process](https://github.com/appwrite/rfc).
+This will allow the Backrush community to sufficiently discuss the new feature value and how it fits within the product roadmap and vision.
 
 ## Other Ways to Help
 
-Pull requests are great, but there are many other areas where you can help Appwrite.
-
-### Blogging & Speaking
-
-When blogging, speaking about, or creating tutorials about one of Appwrite's many features, mention [@appwrite](https://twitter.com/appwrite) on Twitter and/or email [team@appwrite.io](mailto:team@appwrite.io) so we can give pointers and tips and help you spread the word by promoting your content on the different Appwrite communication channels. Please add your blog posts and videos of talks to our [Awesome Appwrite](https://github.com/appwrite/awesome-appwrite) repo on GitHub.
+Pull requests are great, but there are many other areas where you can help Backrush.
 
 ### Presenting at Meetups
 
-Presenting at meetups and conferences about your Appwrite projects is another excellent way to get the word out about Appwrite. Your unique challenges and successes in building things with Appwrite can provide great speaking material. We'd love to review your talk abstract/CFP, so get in touch with us if you'd like some help!
+Presenting at meetups and conferences about your Backrush projects is another excellent way to get the word out about Backrush. Your unique challenges and successes in building things with Backrush can provide great speaking material. We'd love to review your talk abstract/CFP, so get in touch with us if you'd like some help!
 
 ### Sending Feedback & Reporting Bugs
 
-Sending feedback is an excellent way for us to understand different use cases for Appwrite. If you have any issues or want to share your experience, feel free to do so on our GitHub issues page or our [Discord channel](https://discord.gg/GSeTUeA).
+Sending feedback is an excellent way for us to understand different use cases for Backrush. If you have any issues or want to share your experience, feel free to do so on our GitHub issues page.
 
 ### Submitting New Ideas
 
-If you think Appwrite could use a new feature, please open an issue on our GitHub repository, stating as much information as you can think about your new idea and its implications. We would also use this issue to gather more information, get more feedback from the community, and have a proper discussion about the new feature.
+If you think Backrush could use a new feature, please open an issue on our GitHub repository, stating as much information as you can think about your new idea and its implications. We would also use this issue to gather more information, get more feedback from the community, and have a proper discussion about the new feature.
 
 ### Improving Documentation
 
@@ -261,8 +255,4 @@ Submitting documentation updates, enhancements, designs, or bug fixes help us to
 
 ### Helping Someone
 
-You can also help by teaching others how to contribute to Appwrite's repo! Please consider searching for Appwrite on Discord, GitHub, or StackOverflow and helping someone else who needs help.
-
-## Code of Conduct
-
-Help us keep Appwrite open and inclusive. Please read and follow our [Code of Conduct](https://github.com/appwrite/.github/blob/main/CODE_OF_CONDUCT.md).
+You can also help by teaching others how to contribute to Backrush's repo! Please consider searching for Backrush on Discord, GitHub, or StackOverflow and helping someone else who needs help.
