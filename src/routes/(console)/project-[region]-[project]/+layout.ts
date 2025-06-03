@@ -11,7 +11,7 @@ import { get } from 'svelte/store';
 import { headerAlert } from '$lib/stores/headerAlert';
 import PaymentFailed from '$lib/components/billing/alerts/paymentFailed.svelte';
 import { loadAvailableRegions } from '$routes/(console)/regions';
-import type { Organization } from '$lib/stores/organization';
+import { type Organization } from '$lib/stores/organization';
 
 export const load: LayoutLoad = async ({ params, depends }) => {
     depends(Dependencies.PROJECT);
@@ -32,6 +32,7 @@ export const load: LayoutLoad = async ({ params, depends }) => {
             });
         }
         await preferences.loadTeamPrefs(project.teamId);
+
         let roles = isCloud ? [] : defaultRoles;
         let scopes = isCloud ? [] : defaultScopes;
         if (isCloud) {
@@ -40,15 +41,7 @@ export const load: LayoutLoad = async ({ params, depends }) => {
             roles = res.roles;
             scopes = res.scopes;
             if (scopes.includes('billing.read')) {
-                await failedInvoice.load(project.teamId);
-                if (get(failedInvoice)) {
-                    headerAlert.add({
-                        show: true,
-                        component: PaymentFailed,
-                        id: 'paymentFailed',
-                        importance: 1
-                    });
-                }
+                loadFailedInvoices(project.teamId);
             }
         }
 
@@ -64,3 +57,17 @@ export const load: LayoutLoad = async ({ params, depends }) => {
         error(e.code, e.message);
     }
 };
+
+// load the invoice and add a banner in bg
+function loadFailedInvoices(teamId: string) {
+    failedInvoice.load(teamId).then(() => {
+        if (get(failedInvoice)) {
+            headerAlert.add({
+                show: true,
+                component: PaymentFailed,
+                id: 'paymentFailed',
+                importance: 1
+            });
+        }
+    });
+}
